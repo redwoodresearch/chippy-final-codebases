@@ -125,9 +125,9 @@ Covers: verify from local **and** from Hugging Face (separately), local==HF pari
 `tok_subspan.json`), the fully-offline path, and that the figures write non-empty PNG/PDF. The
 optional precompute round-trip runs with `COT_RAW_DIR=/path/to/results`.
 
-## Artifacts on Hugging Face (org `automated-alignment-science`, public)
+## Artifacts on Hugging Face (user `ejcgan`, public)
 
-**Dataset repo — [`automated-alignment-science/cot-controllability-steering-vectors`](https://huggingface.co/datasets/automated-alignment-science/cot-controllability-steering-vectors)**
+**Dataset repo — [`ejcgan/cot-controllability-steering-vectors`](https://huggingface.co/datasets/ejcgan/cot-controllability-steering-vectors)**
 - `steering_vectors/` — the headline `grad_steer_gL10.npz` (layer 10, 2,880 floats) + the full family
   (seeds gL10_s1/s2, layers gL6/gL8/gL12, control twin gL10ctrl, sign-reversed gL10neg, random
   gL10rand, multi-layer gML) and the diff-of-means directions (`steering_directions.npz`,
@@ -139,7 +139,7 @@ optional precompute round-trip runs with `COT_RAW_DIR=/path/to/results`.
   attention tensors + the per-row judged generations) + the headline judged eval files. (The full ~700 MB of
   per-(task×instruction) generations is available on request.)
 
-**Model repo — [`automated-alignment-science/cot-controllability-gpt-oss-20b-lora`](https://huggingface.co/automated-alignment-science/cot-controllability-gpt-oss-20b-lora)**
+**Model repo — [`ejcgan/cot-controllability-gpt-oss-20b-lora`](https://huggingface.co/ejcgan/cot-controllability-gpt-oss-20b-lora)**
 - `cdel/` — the compliant rank-32 LoRA fine-tune (the held-out CoT-control benchmark).
 - `ctrldel/` — the matched raw-trace control (same prompts/config, non-complying targets).
 

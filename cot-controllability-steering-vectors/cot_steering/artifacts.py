@@ -5,7 +5,7 @@ publication request) and fall back to the copies committed under ``figure_data/`
 notebook still runs fully offline. Set ``COT_ARTIFACT_SOURCE=local`` (or pass
 ``source="local"``) to force the local copies, or ``=hf`` to require Hugging Face.
 
-Hugging Face layout (org ``automated-alignment-science``):
+Hugging Face layout (user ``ejcgan``):
 
   dataset repo ``cot-controllability-steering-vectors``
     figure_data/<name>.json     small summaries the figures plot (this loader)
@@ -22,8 +22,8 @@ import os
 from pathlib import Path
 from typing import Any
 
-HF_DATASET_REPO = "automated-alignment-science/cot-controllability-steering-vectors"
-HF_MODEL_REPO = "automated-alignment-science/cot-controllability-gpt-oss-20b-lora"
+HF_DATASET_REPO = "ejcgan/cot-controllability-steering-vectors"
+HF_MODEL_REPO = "ejcgan/cot-controllability-gpt-oss-20b-lora"
 
 _PKG_ROOT = Path(__file__).resolve().parent.parent
 _LOCAL_FIGURE_DATA = _PKG_ROOT / "figure_data"
@@ -57,15 +57,6 @@ def _source(source: str | None) -> str:
     return (source or os.environ.get("COT_ARTIFACT_SOURCE", "auto")).lower()
 
 
-# The HF dataset repo still hosts these two derived summaries under their pre-renumbering
-# names; map the renamed local files back until the repo is re-uploaded with the new names.
-_HF_LEGACY_NAMES = {
-    "fig2_subspan_attention.json": "fig5_subspan_attention.json",
-    "fig3_token_shading.json": "fig4_token_shading.json",
-    "fig4_random_null.json": "fig2_random_null.json",
-}
-
-
 def _hf_download_figure_data(name: str) -> Path:
     from huggingface_hub import hf_hub_download
 
@@ -73,7 +64,7 @@ def _hf_download_figure_data(name: str) -> Path:
     path = hf_hub_download(
         repo_id=HF_DATASET_REPO,
         repo_type="dataset",
-        filename=f"figure_data/{_HF_LEGACY_NAMES.get(name, name)}",
+        filename=f"figure_data/{name}",
         token=token,
     )
     return Path(path)

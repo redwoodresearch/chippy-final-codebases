@@ -4,7 +4,7 @@
 supplementary difference-of-means comparison (fig4).
 
 CPU only, seconds to run, **no model generation / GPU / training**. By default the small
-figure-summary JSONs are loaded from Hugging Face (org ``automated-alignment-science``)
+figure-summary JSONs are loaded from Hugging Face (user ``ejcgan``)
 with a fallback to the copies committed under ``figure_data/``.
 
 Usage::
