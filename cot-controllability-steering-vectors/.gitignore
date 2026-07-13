@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.ipynb_checkpoints/
+.venv/
+venv/
+.env
+
+# The committed figures/*.png|*.pdf are the REGENERATED figures (rebuilt by generate_figures.py
+# from the released data; NOT the reference images). The verification side-output is transient:
+figures/figure_key_numbers.json
+
+# Large artifacts live on Hugging Face, not in git.
+*.npz
+data/
+results_raw/

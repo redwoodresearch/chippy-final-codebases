@@ -1,0 +1,13 @@
+# Dependencies for regenerating fig1-fig5 and running the master notebook (CPU only).
+# Versions are the ones used to verify the reproduction; the APIs used are stable, so a small
+# range is given for huggingface_hub to avoid an over-tight pin.
+numpy==2.4.6
+matplotlib==3.10.9
+huggingface_hub>=1.16,<2   # load the released figure-summary artifacts from Hugging Face
+# notebook / jupyter (only needed to run the .ipynb interactively)
+jupyter>=1.0
+ipykernel>=6
+
+# Only needed to RE-DERIVE figure_data/ from the raw artifacts (precompute_figure_data.py); the
+# figure plot path does NOT import tiktoken (fig4's token layout is precomputed into figure_data/).
+tiktoken==0.13.0          # o200k_base tokenizer

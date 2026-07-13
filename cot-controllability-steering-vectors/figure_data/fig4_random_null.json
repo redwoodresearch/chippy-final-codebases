@@ -1,0 +1,7 @@
+{
+  "p": 0.0,
+  "n": 100,
+  "n_pooled": 500,
+  "source": "recomputed from delivnull judged jsonl",
+  "note": "five random matched-norm vectors pooled; bar shown at n=100 Wilson interval"
+}
