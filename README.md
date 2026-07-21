@@ -1,6 +1,6 @@
-# Chippy final codebases
+# Automation final codebases
 
-Reproducible release packages for research projects run on **Chippy**, Redwood Research's
+Reproducible release packages for research projects run on Redwood Research's
 automated research scaffold. Each project folder is self-contained: minimal cleaned code, a
 master Jupyter notebook, and a figure-generation entry point that regenerate the project's main
 results on CPU from artifacts hosted on Hugging Face, plus the curated research-run scripts for
